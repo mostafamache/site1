@@ -1,0 +1,164 @@
+<head>
+<title> Mon cours </title>
+<link rel="stylesheet" href="/css/styles.css">
+<!-- Load external JavaScript -->
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3.0.1/es5/tex-mml-chtml.js"></script>
+  <!--for graphics-->
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+
+
+<body>
+<h1>Matrices: Définitions et opérations </h1>
+<h2> La matrice générale:</h2>
+
+  <ul>
+   <li>Une matrice est un tableau, à double entrée, de nombres. </li>
+   <li>Les informations dans une matrice s’interprètent selon la position verticale et horizontale de chaque nombre. </li>
+   <li>Une matrice de format \(m×n\) est un tableau de \(m×n\) nombres disposés sur \(m\) lignes et \(n\) colonnes.</li>
+  </ul>
+
+<!--Exemple -->
+  <div class="exemple">
+    Une entreprise fabrique trois produits B, C et D à partir de trois éléments R, S et T. <br>
+    Les quantités en unités de ces éléments pour fabriquer ces trois produits sont confinées 
+    dans cette matrice
+    <p> \[
+      \begin{array}{c@{\,}c@{}c}
+      & \begin{matrix} \text{R} & \,\text{S} & \,\text{T} \end{matrix} & \\
+      \begin{matrix} \text{B} \\ \text{C} \\ \text{D} \end{matrix} &
+      \begin{pmatrix}
+      3 & 1 & 2 \\
+      0 & 4 & 2 \\
+      1 & 5 & 1
+     \end{pmatrix} &
+      \end{array}
+      \]</p>
+  </div>
+    <ul>
+     <li>On note généralement une matrice par une lettre majuscule, telle A.</li>
+     <li> L’élément situé à l’intersection de la \(i^{ème}\) ligne et de la \(j^{ème}\)
+      colonne est noté \(a_{ij}\). Dans l’exemple précédent, on a \(a_{11}=3\) et \(a_{32}=5\).</li>
+    </ul>
+	<div class="Travail">
+    	Quel est le format de la matrice précédente ? Trouve \(a_{13},\, a_{31}\) et \(a_{22}\) ?
+  </div>
+
+  <details>
+  <summary>Réponse</summary>
+  <p>
+  \(a_{13}=2,\, a_{31}=1\) et \(a_{22}=4\)
+  </p>
+  </details>
+
+<!--fin de l'exemple -->
+
+<!-- graphiques
+  <ul>
+  <li>L'équation d'un cercle unitaire est donnée par </li>
+  <iframe src="https://www.desmos.com/calculator/iags9nch1b?embed" width="500" height="500" 
+  style="border: 1px solid #ccc" frameborder=1></iframe>
+  <li>L'équation d'une hyperbole unitaire est donnée par </li>
+  </ul> 
+
+<div id="myPlot" style="width:100%;max-width:700px"></div>
+<script>
+  let exp = "Math.sin(x)";
+  
+  // Generate values
+  const xValues = [];
+  const yValues = [];
+  for (let x = 0; x <= 10; x += 0.1) {
+    xValues.push(x);
+    yValues.push(eval(exp));
+  }
+  // Display using Plotly
+  const data = [{x:xValues, y:yValues, mode:"lines"}];
+  const layout = {title: "y = " + exp};
+  Plotly.newPlot("myPlot", data, layout);
+</script> -->
+
+<h2>La matrice carrée</h2>
+<ul>
+  <li>Une matrice carrée d’ordre \(n\) est une matrice qui comprend \(n\) lignes et \(n\) colonnes. </li>
+  <li>La diagonale principale d’une matrice carrée \(A\) est l’ensemble des élèments \(a_{ii}\)
+  (c’est-à-dire, les coefficients \(a_{11},a_{22},a_{33},\ldots)\) </li>
+  <li>	La trace d’une matrice carrée \(A\) d’ordre \(n\), notée \(Tr(A)\), est la somme des élèments de sa 
+    diagonale principale. <br>
+    Donc: \(\mathrm{Tr}(A)=a_{11}+a_{11}+\ldots+a_{nn}\). On écrit aussi
+    \[\mathrm{Tr}(A)=\sum_{i=1}^{i=n}a_{ii}\]
+  </li>
+</ul>
+
+<div class="exemple">
+Dans l’exemple précédent, on a : \(\mathrm{Tr}(A)=a_{11}+a_{22}+a_{33}=3+4+1=8.\)
+</div>
+
+<div class="Travail">
+<ul>
+  <li>Calcule, si possible, la trace de chacune des matrices suivantes 
+<p>
+\(
+    A =\begin{pmatrix}
+      2 \\
+      3\\
+      -1
+    \end{pmatrix}, \quad
+    B=\begin{pmatrix}
+      4 & -2 \\
+      5 & 1
+    \end{pmatrix}, \quad
+    C=\begin{pmatrix}
+      3 & -6
+    \end{pmatrix} \quad
+    \text{et}  \quad D=\begin{pmatrix}
+      2 & 1 & 4 \\
+      -5 & 6 & -2 \\
+      7 & 3 & -1
+    \end{pmatrix} 
+    \)
+</p> </li>
+  <li>Développe et calcule la somme \(\sum_{i=2}^{i=5}(i^2+3)\)</li>
+  <li>Écris la somme \(1 + 4 + 9 +⋯ + 64\) en utilisant le symbole \(\sum\).</li>
+</ul>
+	
+</div>
+	
+<details>
+  <summary>Réponse</summary>
+  <ul>
+  <li>\(\mathrm{Tr}(A)\quad \nexists,\quad \mathrm{Tr}(B)=5,\quad \mathrm{Tr}(C)\;\nexists,\quad \mathrm{Tr}(D)=9\) </li>
+  <li>\(\sum_{i=2}^{i=5}(i^2+3)=(2^2+3)+(3^2+3)+(4^2+3)+(5^2+3)=66.\)</li>
+  <li>\(1 + 4 + 9 +⋯ + 64=\sum_{i=1}^{i=8}i^2\) .</li>
+  </ul>
+</details>
+
+<h2>Les matrices particulières</h2>
+<ul>
+  <li><u>Matrice ligne</u>: Une matrice qui contient une seule ligne. Son format est \(1×m\). <br>
+    Par exemple, la matrice \(\begin{pmatrix}
+      2 & -1 & 3 & 5
+    \end{pmatrix}\) est une matrice ligne de format \(1×4\).</li>
+  <li><u>Matrice colonne</u>: Une matrice qui contient une seule colonne. Son format est \(n×1\).<br>
+    Par exemple, la matrice \(\begin{pmatrix}
+      2 \\ 7\\0
+    \end{pmatrix}\) est une matrice colonne de format \(3×1\).</li>
+  <li>a</li>
+  <li>a</li>
+</ul>
+
+<h2>Opérations sur les matrices</h2>
+<p>On definit .....<br>
+On definit .....<br>
+On definit .....</p>
+
+<h2>Propriétés de l'addition</h2>
+<p>On definit .....<br>
+On definit .....<br>
+On definit .....</p>
+
+
+</body>
+
+

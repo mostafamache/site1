@@ -1,0 +1,164 @@
+/* Place your CSS styles in this file */
+
+h1 {
+    text-align:left;
+    font-family: "palatino";
+    font-weight: bold;
+    font-size: 40px;
+    color: blue
+    }
+
+
+h2 {
+    text-align:left;
+    font-family: "palatino";
+    font-weight: bold;
+    font-size:30px ;
+    color: green
+    }
+
+
+p {
+    text-align:left;
+    font-family: "palatino";
+    font-weight: normal;
+    color: black
+    }
+
+body {
+  background-color: rgb(230, 235, 240);
+  
+}
+/* Navbar container */
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+  font-family: Century;
+}
+
+/* Links inside the navbar */
+.navbar a {
+  float: left;
+  font-size: 20px;
+  color: white;
+  text-align: center;
+  padding: 10px 12px;
+  text-decoration: none;
+}
+
+/* The dropdown container */
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+/* Dropdown button */
+.dropdown .dropbtn {
+  font-size: 20px;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 12px 14px;
+  background-color:inherit;
+  font-family: inherit; /* Important for vertical align on mobile phones */
+  margin: 0; /* Important for vertical align on mobile phones */
+}
+
+/* Add a red background color to navbar links on hover */
+.navbar a:hover, .dropdown:hover .dropbtn {
+  background-color: rgb(100, 150, 250);
+}
+
+/* Dropdown content (hidden by default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: rgb(125, 165, 205);
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+/* Add a grey background color to dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+
+/*définitions, exemples, exercices*/
+
+/*Exemple*/
+body {
+    counter-reset: exemple;
+}
+
+.exemple {
+    counter-increment: exemple;
+    margin: 20px 0;
+    padding: 5px;
+    width: fit-content;
+    background-color: #f2f2f2;
+    border-left: 5px solid #0078d4;
+}
+
+.exemple::before {
+    content: "Exemple " counter(exemple) " : ";
+    font-weight: bold;
+    color: #0078d4;
+}
+
+
+/*Travail*/
+body {
+    counter-reset: travail;
+}
+
+.travail {
+    counter-increment: travail;
+    margin: 20px 0;
+    padding: 5px;
+    width: fit-content;
+    background-color: #e4e5e8;
+    border-left: 5px solid #2b3a25;
+}
+
+.travail::before {
+    content: "Travail " counter(travail) " : ";
+    font-weight: bold;
+    color: #265420;
+}
+
+/*Styler la réponse cachée*/
+
+details {
+    margin: 15px 0;
+    padding: 10px;
+    background-color: #e4e5e8;
+    border-left: 4px solid #265420;
+    border-radius: 5px;
+}
+
+summary {
+    cursor: pointer;
+    font-weight: bold;
+    color: #265420;
+}
+
+details p {
+    margin-left: 15px;
+}

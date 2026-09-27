@@ -1,0 +1,48 @@
+<head>
+  <title>Cours 1</title>
+</head>
+
+<body style="background-color: rgb(100, 200, 250);">
+
+<h1>Fonctions hyperboliques</h1>
+
+<h2>Objectifs :</h2>
+<b>
+<ol>
+  <li style="color:green;font-size:20px;">Connaître les définitions des fonctions hyperboliques.</li>
+  <li style="color:green;font-size:20px;">Être capable de démontrer quelques identités hyperboliques.</li>
+  <li style="color:green;font-size:20px;">Comprendre l'interprétation géométrique de quelques fonctions hyperboliques.</li>
+</ol>  
+</b>
+<ul>
+  <li>L'équation d'un cercle unitaire est donnée par </li>
+  <iframe src="https://www.desmos.com/calculator/iags9nch1b?embed" width="500" height="500" 
+  style="border: 1px solid #ccc" frameborder=1></iframe>
+  <li>L'équation d'une hyperbole unitaire est donnée par </li>
+</ul> 
+
+ <div id="myPlot" style="width:100%;max-width:700px"></div>
+ <script>
+  let exp = "Math.sin(x)";
+  
+  // Generate values
+  const xValues = [];
+  const yValues = [];
+  for (let x = 0; x <= 10; x += 0.1) {
+    xValues.push(x);
+    yValues.push(eval(exp));
+  }
+  // Display using Plotly
+  const data = [{x:xValues, y:yValues, mode:"lines"}];
+  const layout = {title: "y = " + exp};
+  Plotly.newPlot("myPlot", data, layout);
+  </script>
+
+
+<h2>Definitions</h2>
+<p>On definit .....<br>
+On definit .....<br>
+On definit .....</p>
+
+
+</body>
